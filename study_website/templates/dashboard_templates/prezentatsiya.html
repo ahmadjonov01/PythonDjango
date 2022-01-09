@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'dashboard_templates/helper/dashboard_header.html' %}
+	<title>Ознакомление с презентацией</title>
+	<body>
+		<div class="page">
+			<!-- modal -->
+			{% include 'dashboard_templates/helper/dashboard_navbar.html' %}
+
+				<!-- body -->
+
+				<div class="video">
+					<div class="video__head">
+					{% for i in lessons %}
+						<a href="{% url 'info_prezentatsiya' id1=i.id  id=m_id %}" class="active">
+							<span>{{ i.num }}</span>
+							<p>{{ i.theme }}</p>
+						</a>
+					 {% endfor %}
+					 
+					 {% for da in books1|slice:1 %}
+					 <a href="{% url 'stoer' id=m_id %}" class="active">
+						{% comment %} <span>{{ stoer  }}</span> {% endcomment %}
+						<p>Kerakli resuslar</p>
+					</a>	
+					 {% endfor %}
+					</div>
+
+					<!--
+					<video
+						controls
+						crossorigin
+						playsinline
+						poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+					>
+						<source
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+							type="video/mp4"
+							size="576"
+						/>
+						<source
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
+							type="video/mp4"
+							size="720"
+						/>
+						<source
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
+							type="video/mp4"
+							size="1080"
+						/>
+
+						<!- Caption files ->
+						<track
+							kind="captions"
+							label="English"
+							srclang="en"
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+							default
+						/>
+						<track
+							kind="captions"
+							label="Français"
+							srclang="fr"
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt"
+						/>
+					</video>
+					-->
+				{% for i in lesson|slice:1 %}
+				{% comment %} <h1>{{ i.prizentatsiya }}</h1>  {% endcomment %}
+				{% if i.prizentatsiya %}
+					<iframe
+				
+						src="{{ i.prizentatsiya.url }}&	"
+						style="width: 100%; height: 600px"
+						frameborder="0"
+						>Ваш браузер не поддерживает фреймы</iframe>
+				 {% else %} 
+						{% endif %} 
+
+						<video
+						controls
+						crossorigin
+						playsinline
+					>
+				{% if i.video1 %}
+					{% comment %} {{i.video1}}	 {% endcomment %}
+						<source src="{{ i.video1.url }}" type="video/mp4" size="576"/>
+						<source	src="{{ i.video1.url }}	" type="video/mp4" size="720"/>
+						<source
+							src="https://www.youtube.com/watch?v=c8lTeOjkjio"
+							type="video/mp4"
+							size="1080"/>
+
+						<!-- Caption files -->
+						<track
+							kind="captions"
+							label="English"
+							srclang="en"
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+							default
+						/>
+						<track
+							kind="captions"
+							label="Français"
+							srclang="fr"
+							src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt"
+						/>
+					</video>
+					{% else %}
+
+					{% endif %}
+					<div class="video__content">
+						<h1>{{ i.theme }}</h1>
+						<p>
+							{{ i.content }}
+						</p>
+					</div>
+
+					{% endfor %}
+
+					<div class="container">
+						<!-- body -->
+				</div>
+			</main>
+		</div>
+
+		{% include 'dashboard_templates/helper/dashboard_footer.html' %}
+	</body>
+</html>

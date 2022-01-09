@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'dashboard_templates/helper/dashboard_header.html' %}
+	<title>Asosiy sahifa</title>
+	<body>
+		<div class="page">
+			<!-- modal -->
+			<!-- modal -->
+			{% include 'dashboard_templates/helper/dashboard_navbar.html' %}
+
+
+				<div class="container">
+					<!-- body -->
+
+					<div class="items">
+						<div class="item__wrapper">
+							<a href="dashboard.html" class="item item--info">
+								<div class="item__left">
+									<div class="item__photo">
+										<img src="{% static 'dashboard/assets/img/avatar-filled.png' %}" alt="" />
+									</div>
+									<span class="item__link">Изменить</span>
+								</div>
+								<div class="item__right">
+									<div class="item__fish">Muhammad Mamasoliyev</div>
+									<div class="item__mail">
+										E-mail:
+										<span>muhammad.m@gmail.com</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="item__wrapper">
+							<a href="#" class="item">
+								<div class="item__icon">
+									<i class="bx bx-book-open"></i>
+								</div>
+								<div class="item__content">
+									<b>15</b>
+									<span>Enrolled Courses</span>
+								</div>
+							</a>
+						</div>
+						<div class="item__wrapper">
+							<a href="#" class="item">
+								<div class="item__icon">
+									<i class="bx bx-slideshow"></i>
+								</div>
+								<div class="item__content">
+									<b>0</b>
+									<span>Active Courses</span>
+								</div>
+							</a>
+						</div>
+						<div class="item__wrapper">
+							<a href="#" class="item">
+								<div class="item__icon">
+									<i class="bx bx-check-circle"></i>
+								</div>
+								<div class="item__content">
+									<b>18</b>
+									<span>Completed Courses</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- scripts -->
+		<!-- CDN jquery -->
+		{% include 'dashboard_templates/helper/dashboard_footer.html' %}
+	</body>
+</html>

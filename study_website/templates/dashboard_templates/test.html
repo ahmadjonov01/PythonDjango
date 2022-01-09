@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'dashboard_templates/helper/dashboard_header.html' %}
+<title>Test</title>
+<body>
+<div class="page">
+    <!-- modal -->
+    <!-- modal -->
+    {% include 'dashboard_templates/helper/dashboard_navbar.html' %}
+    <div class="container">
+        <!-- body -->
+
+        <div class="tests">
+
+            <div class="test__head">
+                {% for i in test %}
+                    <p>{{ i.test_theme }}</p>
+                    <!-- data-time 300 seconds -->
+                    <span class="test__time"
+                            {% if i.time == "soat" %}
+                          data-time="{{ soat }}"
+                            {% elif i.time == 'min' %}
+                          data-time="{{ min }}"
+
+                            {% endif %}
+                    >
+
+                </span>
+                    <div class="test__progress">
+                        <span></span>
+                    </div>
+                {% endfor %}
+
+                <ul class="test__nums">
+                    {% for i in test1 %}
+                        <li
+                                {% if i.num == 1 %}
+                                    class="active"
+                                {% endif %}
+                                    data-test="test-{{ forloop.counter }}">{{ forloop.counter }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <form action="#" method='get' class="test__body loaded">
+                {#                {% csrf_token %}#}
+                {% for i in test1 %}
+
+                    <div class="test test-{{ forloop.counter }} active">
+                        <p>
+                            {{ forloop.counter }} ) {{ i.question }}
+                        </p>
+                        <ul>
+                            <li>
+                                <label for="test-{{ i.id }}-1"
+                                >{{ i.option1 }}</label
+                                >
+                            </li>
+                            <li>
+                                <label for="test-{{ i.id }}-2"
+                                >{{ i.option2 }}</label
+                                >
+                            </li>
+                            <li>
+                                <label for="test-{{ i.id }}-3"
+                                >{{ i.option3 }}</label
+                                >
+                            </li>
+                            <li>
+                                <label for="test-{{ i.id }}-4"
+                                >{{ i.option4 }}</label
+                                >
+                            </li>
+                        </ul>
+
+                        <input
+                                style="display: none"
+                                type="radio"
+                                id="test-{{ i.id }}-1"
+                                name="test-{{ i.id }}"
+                                value="{{ i.option1 }}"
+                        />
+                        <input
+                                style="display: none"
+                                type="radio"
+                                id="test-{{ i.id }}-2"
+                                name="test-{{ i.id }}"
+                                value="{{ i.option2 }}"
+                        />
+                        <input
+                                style="display: none"
+                                type="radio"
+                                id="test-{{ i.id }}-3"
+                                name="test-{{ i.id }}"
+                                value="{{ i.option3 }}"
+                        />
+                        <input
+                                style="display: none"
+                                type="radio"
+                                id="test-{{ i.id }}-4"
+                                name="test-{{ i.id }}"
+                                value="{{ i.option4 }}"
+                        />
+                    </div>
+                {% endfor %}
+
+                <a class="btn prev">Prev</a>
+                <a class="btn next active">Next</a>
+
+                <a href="{% url 'result' %}" class="btn prev">TEST JAVOBLARNI</a>
+                {#                {% if d == 0 %}#}
+
+                <a href="{% url 'result' %}">
+                    <button class="btn">Jo'natish</button>
+                </a>
+                {#            <a href="{% url 'result' %}">#}
+                {#                        <button class="btn">Jo'natish</button>#}
+                {#                    </a>#}
+                {#                {% elif d != 0 %}#}
+                {#                    <a href="{% url 'result' %}">#}
+                {#                        <input class="btn"  type="submit">Jo'natish#}
+                {#                    </a>#}
+                {#                {% endif %}#}
+            </form>
+        </div>
+    </div>
+    </main>
+</div>
+
+<!-- scripts -->
+<!-- CDN jquery -->
+{% include 'dashboard_templates/helper/dashboard_footer.html' %}
+</body>
+</html>

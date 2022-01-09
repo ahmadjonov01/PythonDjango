@@ -1,0 +1,238 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- meta -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Bilol Tuliboev" />
+		<meta name="robots" content="index, follow, noodp" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="google" content="notranslate" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+
+		<!-- css -->
+		<link rel="stylesheet" href="{% static 'auth/assets/css/style.css' %}" />
+
+		<!-- title -->
+		<title>Авторизация</title>
+	</head>
+	<body>
+		<div class="page">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="header__box">
+						<a href="#" class="header__logo">
+							<img src="{% static 'auth/assets/img/logo.svg' %}" alt="" />
+						</a>
+						<div class="header__lang">
+							<img src="{% static 'auth/assets/img/globe.png' %}" alt="" class="header__globe" />
+							<div class="header__lang__list">
+								<a href="#">
+									<img src="{% static 'auth/assets/img/uzbekistan-flag-png-large.png' %}" alt="" />
+									<span>O'zbekcha</span>
+								</a>
+
+								<a href="#">
+									<img src="{% static 'auth/assets/img/russia-flag-png-large.png' %}" alt="" />
+									<span>Руский</span>
+								</a>
+								<a href="#">
+									<img
+										src="{% static 'auth/assets/img/united-kingdom-flag-png-large.png' %}"
+										alt=""
+									/>
+									<span>English</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- auth -->
+			<div class="auth__container">
+				<div class="auth">
+					<div class="auth__header">
+						<div class="auth__header__item active" data-auth="login">ВХОД</div>
+						<div class="auth__header__item" data-auth="register">
+							РЕГИСТРАЦИЯ
+						</div>
+					</div>
+
+					<!-- Login -->
+					<div class="auth__body auth__body--login active">
+						<div class="auth__title">Вход в систему</div>
+						<!-- Login Error Flash -->
+						<div class="auth__flash">
+							Данные введены неверно, проверьте и введите заново
+						</div>
+						<form action="#" method="POST" class="auth__form">
+							<div class="auth__input__box">
+								<input
+									type="email"
+									class="auth__input"
+									placeholder="Ваш e-mail"
+									required
+								/>
+							</div>
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Ваш пароль"
+									required
+								/>
+							</div>
+							<div class="auth__policy">
+								Нажимая кнопку "Войти", вы соглашаетесь с нашими
+								<a href="#">Правилами пользвания</a>, а также
+								<a href="#">Политикой конфиденциальности</a>
+							</div>
+							<button class="btn">Войти</button>
+							<div class="auth__forget">Забыли пароль?</div>
+						</form>
+					</div>
+
+					<!-- Register -->
+					<div class="auth__body auth__body--register">
+						<div class="auth__title">Регистрация</div>
+						<div class="auth__flash">Пароли должны быть одинаковыми!</div>
+						<form action="#" class="auth__form" method="POST">
+							<div class="auth__input__box">
+								<input
+									type="email"
+									class="auth__input"
+									placeholder="Ваш e-mail"
+									required
+								/>
+							</div>
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Пароль"
+									required
+								/>
+							</div>
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Повторите пароль"
+									required
+								/>
+							</div>
+							<button class="btn">Продолжить</button>
+						</form>
+					</div>
+
+					<!-- SMS-confirm -->
+					<div class="auth__body auth__body--sms-confirm">
+						<div class="auth__title">Восстановление доступа</div>
+						<!-- SMS Confirm Error Flash -->
+						<div class="auth__flash">
+							Введите код подтверждения, который вы получили по электронной
+							почте
+						</div>
+						<form action="#" method="POST" class="auth__form">
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Kод подтверждения"
+									required
+								/>
+							</div>
+							<button class="btn">Продолжить</button>
+						</form>
+					</div>
+
+					<!-- Success -->
+					<div class="auth__body auth__body--success">
+						<div class="auth__title">Регистрация</div>
+						<div class="auth__policy">
+							Прочтите и примите наши условия использования и политику
+							конфиденциальности.
+						</div>
+						<a href="#" class="auth__link" target="_blank"
+							>Правила пользования</a
+						>
+						<a href="#" class="auth__link last" target="_blank"
+							>Политика конфиденциальности</a
+						>
+						<a href="#" class="btn">Согласен (а)</a>
+					</div>
+
+					<!-- Password Restore -->
+					<div class="auth__body auth__body--restore">
+						<div class="auth__title">Восстановление доступа</div>
+						<!-- Password Restore Flash -->
+						<div class="auth__flash">
+							Неправильно введен E-mail, пожалуйста введите снова
+						</div>
+						<form action="#" method="POST" class="auth__form">
+							<div class="auth__input__box">
+								<input
+									type="email"
+									class="auth__input"
+									placeholder="Введите E-mail"
+									required
+								/>
+							</div>
+							<button class="btn">Продолжить</button>
+						</form>
+					</div>
+
+					<!-- Password Update -->
+					<div class="auth__body auth__body--update">
+						<div class="auth__title">Восстановление доступа</div>
+						<!-- Password Update Flash -->
+						<div class="auth__flash">
+							Код подтверждения введен неверно. Пожалуйста, попробуйте еще раз
+							через 2 минуты
+						</div>
+						<form action="#" method="POST" class="auth__form">
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Код подтверждения (email)"
+									required
+								/>
+							</div>
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Новый пароль"
+									required
+								/>
+							</div>
+							<div class="auth__input__box">
+								<input
+									type="text"
+									class="auth__input"
+									placeholder="Повторите пароль"
+									required
+								/>
+							</div>
+							<button class="btn">Отправить снова</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- scripts -->
+		<!-- CDN jquery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<script src="{% static 'auth/assets/js/app.js' %}"></script>
+	</body>
+</html>

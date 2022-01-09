@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'dashboard_templates/helper/dashboard_header.html' %}
+	<title>Yordam</title>
+	<body>
+		<div class="page">
+			<!-- modal -->
+			<!-- modal -->
+			{% include 'dashboard_templates/helper/dashboard_navbar.html' %}
+
+				<div class="container">
+					<!-- body -->
+
+					<div class="help">
+						<div class="help__box">
+							<h1 class="help__title">Помощь</h1>
+							<a href="help-handbook.html" class="help__item">
+								<img src="{% static 'dashboard/assets/img/help-green.png' %}" alt="" />
+								<span>Инструкции</span>
+							</a>
+							<a href="help-terms.html" class="help__item">
+								<img src="{% static 'dashboard/assets/img/help-blue.png' %}" alt="" />
+								<span>Условия пользования</span>
+							</a>
+							<a href="help-security.html" class="help__item">
+								<img src="{% static 'dashboard/assets/img/help-red.png' %}" alt="" />
+								<span>Политика безопасности</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- scripts -->
+		<!-- CDN jquery -->
+		{% include 'dashboard_templates/helper/dashboard_footer.html' %}
+	</body>
+</html>

@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'dashboard_templates/helper/dashboard_header.html' %}
+	<title>Course info</title>
+	<body>
+		<div class="page">
+			<!-- modal -->
+			<!-- modal -->
+			{% include 'dashboard_templates/helper/dashboard_navbar.html' %}
+
+				<div class="container">
+					<!-- body -->
+
+					<!-- course info -->
+					<div class="info">
+						<div class="info__photo__wrapper">
+							<div class="info__photo">
+								<img
+									src="https://vademec.ru/upload/iblock/e6b/e6bf6d2709e24fd1b6ff0f8c179c027c.jpg"
+									alt=""
+								/>
+							</div>
+						</div>
+						<div class="info__content">
+							<h1>Противодействие распространению ВИЧ инфекции</h1>
+							<p>Короткая текстовая информация
+								о модули</p>
+							<!--
+							<a href="videos.html" class="btn">Начать</a>
+						-->
+						</div>
+					</div>
+
+					<!-- tab -->
+					<div class="tab">
+						<div class="tab__head">
+							<span class="active" data-tab="tab1">Раздел</span>
+							<span data-tab="tab2">Какой то раздел</span>
+						</div>
+						<div class="tab__body tab1 active">
+							<div class="tab__list">
+								<h2>Что вы получите в этом модуле</h2>
+								<ul>
+									<li><i class="bx bx-check"></i><span>какая информация</span></li>
+									<li><i class="bx bx-check"></i><span>какая информация</span></li>
+									<li><i class="bx bx-check"></i><span>какая информация</span></li>
+								</ul>
+								<ul>
+									<li><i class="bx bx-check"></i><span>какая информация</span></li>
+								</ul>
+							</div>
+							<h2>Что дожно быть</h2>
+							<ul>
+								<li>интернет</li>
+								<li>shaxsiy kompyuter yoki mobil telefon</li>
+								<li>понимание русского языка</li>
+							</ul>
+							<h2>Короткая информация</h3>
+							<p>
+								Oliy ta’lim muassalariga, chet el ta’lim dargohlariga , harbiy oliy bilim
+								yurtlariga o’qishga topshirish istagida bo’lganlar uchun to’liq
+								mavzulashtirilgan kurs.
+							</p>
+							<p>
+								Kurs davomiyligi 10oyni tashkil etadi. Kurs modullarga bo’lingan holda
+								olib boriladi, modul 1oyga mo’ljallangan demak 10ta modul mavjud, har bir
+								modulda 12tadan dars bo’lib darslar intensiv tarzda o’tiladi, dars
+								so’ngida test bilan o’zlashtirish natijalari hisoblab boriladi,
+								belgilangan ballni yig’a olmasangiz keyngi darsga va keyngi modulga o’ta
+								olmaysiz. kurs uchun to’lovlar xar bir modul uchun alohida to’lash
+								imkoniyati mavjud.
+							</p>
+							<p>
+								Har oy kurs mualliflari tomonidan umumiy test olinadi, olingan test
+								natijalari asosida reyting jadval yuritiladi.
+							</p>
+							<p>
+								O’zlashtirishi past bo’lgan bollar bilan alohida zoom dasturi orqali
+								alohida shug’ullaniladi. Biriktirilgan mentorlar bilan to’g’ridan to’g’ri
+								muloqot qilish imkoniyati mavjud.
+							</p>
+						</div>
+						<div class="tab__body tab2">
+						<h2>Что дожно быть</h2>
+						<ul>
+							<li>интернет</li>
+							<li>shaxsiy kompyuter yoki mobil telefon</li>
+							<li>понимание русского языка</li>
+						</ul>
+						<h2>Короткая информация</h3>
+						<p>
+							Oliy ta’lim muassalariga, chet el ta’lim dargohlariga , harbiy oliy bilim
+							yurtlariga o’qishga topshirish istagida bo’lganlar uchun to’liq
+							mavzulashtirilgan kurs.
+						</p>
+						<p>
+							Kurs davomiyligi 10oyni tashkil etadi. Kurs modullarga bo’lingan holda
+							olib boriladi, modul 1oyga mo’ljallangan demak 10ta modul mavjud, har bir
+							modulda 12tadan dars bo’lib darslar intensiv tarzda o’tiladi, dars
+							so’ngida test bilan o’zlashtirish natijalari hisoblab boriladi,
+							belgilangan ballni yig’a olmasangiz keyngi darsga va keyngi modulga o’ta
+							olmaysiz. kurs uchun to’lovlar xar bir modul uchun alohida to’lash
+							imkoniyati mavjud.
+						</p>
+						<p>
+							Har oy kurs mualliflari tomonidan umumiy test olinadi, olingan test
+							natijalari asosida reyting jadval yuritiladi.
+						</p>
+						<p>
+							O’zlashtirishi past bo’lgan bollar bilan alohida zoom dasturi orqali
+							alohida shug’ullaniladi. Biriktirilgan mentorlar bilan to’g’ridan to’g’ri
+							muloqot qilish imkoniyati mavjud.
+						</p></div>
+					</div>
+					<div class="moduls">
+						<h1>Модули</h1>
+						{% for dat in kurs %}
+						<div class="moduls__item">
+							<div class="moduls__box">
+
+						<div class="moduls__header">
+									<h1>{{ dat.title }}</h1>
+									<!-- <p>12ta dars</p> --> 
+								</div>
+								<a href="{% url 'info_prezentatsiya' id=dat.id  id1=1 %}" target="_blank">Начать</a>
+							</div>
+						</div>
+						 {% endfor %}
+
+						<div class="moduls__item">
+							<div class="moduls__box">
+								<div class="moduls__header">
+									<h1>Ключевые группы населения</h1>
+									<!--<div class="moduls__progress" data-progress="34">
+										<span></span>
+									</div> 
+								-->
+								</div>
+							</div>
+						</div>
+
+						<div class="moduls__item">
+							<div class="moduls__box">
+								<div class="moduls__header">
+									<h1>Программы по профилактике ВИЧ инфекции </h1>
+									<!-- <div class="moduls__progress" data-progress="100">
+										<span></span>
+									</div>
+								-->
+								</div>
+								<a href="#">Закрыто</a>
+							</div>
+						</div>
+
+						<div class="moduls__item">
+							<div class="moduls__box">
+								<div class="moduls__header">
+									<h1>Тестирование и консультирование на ВИЧ (ДКТ)</h1>
+									<!-- <p>12ta dars</p> -->
+								</div>
+								<a href="#">Закрыто</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- scripts -->
+		<!-- CDN jquery -->
+		{% include 'dashboard_templates/helper/dashboard_footer.html' %}
+	</body>
+</html>

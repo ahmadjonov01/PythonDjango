@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'dashboard_templates/helper/dashboard_header.html' %}
+	<title>Ресурсы</title>
+	<body>
+		<div class="page">
+			<!-- modal -->
+			<!-- modal -->
+			{% include 'dashboard_templates/helper/dashboard_navbar.html' %}
+
+
+				<div class="container">
+					<!-- body -->
+
+
+		<div class ='form-row' >
+						<div class="files">
+						{% for da in books %}
+						<div class="file">
+							<div class="file__name">
+								<i class="bx bx-folder"></i>
+								<span>{{ da.book_name }}</span>
+							</div>
+							<div class="file__date">{{ da.date }}</div>
+							<div class="file__size">{{ da.book.size|filesizeformat }}</div>
+							<a href="#" class="btn">Открыть</a>
+							<a href="{% url 'open' da.id %}" class="btn">Скачать</a>
+						</div>					
+					</div>
+					{% endfor %} 
+					
+					<div class="pagination">
+						{% if contacts.has_previous %}
+						<a href="?page=1"class='pagination__btn' >&laquo; first</a>
+            			<a href="?page={{ contacts.previous_page_number }}" class='pagination__btn'>previous</a>
+						{% endif %}
+						<span class="pagination__btn">
+							<h5 style ="color:red" >Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.</h5>
+						</span>
+						{% if contacts.has_next %}
+						<a class="pagination__btn" href="?page={{ contacts.next_page_number }}"><h5>Nexth</5></a>
+						<a class="pagination__btn" href="?page={{ contacts.paginator.num_pages }}"><h5>Lasth</5> &raquo;</a>
+						{% endif %}
+					</div>
+<div>
+
+				</div>
+			</main>
+		</div>
+
+		{% include 'dashboard_templates/helper/dashboard_footer.html' %}
+	</body>
+</html>

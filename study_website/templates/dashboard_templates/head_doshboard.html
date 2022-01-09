@@ -1,0 +1,42 @@
+ {% block content %}<div class="video__head">
+
+
+    <a href="{% url 'poisk' %}" >
+        <span>4</span>
+        <p>Поиск</p>
+        <!-- <i class="bx bx-lock-alt"></i> -->
+    </a>
+    <a class="disabled">
+        <span>5</span>
+        <p>Опрос</p>
+        <i class="bx bx-lock-alt"></i>
+    </a>
+    <div class="video__head">
+        <a href="{% url 'info_prezentatsiya' %}" class="active">
+            <span>1</span>
+            <p>Ознакомление с презентацией</p>
+        </a>
+    
+    
+        <a href="{% url 'videos' %}" class="active">
+            <span>2</span>
+            <p>Просмотр видео</p>
+        </a>
+    
+        <a class="active">
+            <span>3</span>
+            <p>Изучить документы</p>
+        </a>
+    
+        <a class="active">
+            <span>4</span>
+            <p>Поиск</p>
+            <!-- <i class="bx bx-lock-alt"></i> -->
+        </a>
+        <a href="test.html">
+            <span>5</span>
+            <p>Опрос</p>
+            <!-- <i class="bx bx-lock-alt"></i> -->
+        </a>
+    </div>
+{% endblock content %}
